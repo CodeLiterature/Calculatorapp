@@ -68,18 +68,18 @@ $(document).ready(function() {
   }
   var isAudioPlaying = false;
 
-      $(".dot").click(function () {
-        if (!isAudioPlaying) {
-        var music = new Audio("./roll.mp3")
-        music.play();
-        isAudioPlaying = true;
-          $(".none").removeClass("none");
-        music.addEventListener("ended", function () {
-            isAudioPlaying = false;
-          $(".createdBy").addClass("none");
-        });
-      }
+  $(".dot").click(function() {
+    if (!isAudioPlaying) {
+      var music = new Audio("./roll.mp3")
+      music.play();
+      isAudioPlaying = true;
+      $(".none").removeClass("none");
+      music.addEventListener("ended", function() {
+        isAudioPlaying = false;
+        $(".createdBy").addClass("none");
       });
+    }
+  });
 
   $(btn).click(function() {
     var clickedBtn = this.innerHTML;
@@ -91,18 +91,18 @@ $(document).ready(function() {
           // Handle negative numbers
           content1.push("-");
           num1 = Number(content1.join(""));
-      }
+        }
         num1 = Number(content1.join(""));
         console.log(num1);
         updateDisplay();
-}
+      }
       else if ($(this).hasClass("delete")) {
         del(content1, num1);
       }
       else if ($(this).hasClass("clear")) {
         clear();
       }
-  }
+    }
     else if (istrue() === false) {
       updateDisplay();
       if ($(this).hasClass("num")) {
@@ -111,7 +111,7 @@ $(document).ready(function() {
         updateDisplay();
 
       }
-    
+
       else if ($(this).hasClass("delete")) {
         del(content2, num2);
       }
@@ -154,7 +154,7 @@ $(document).ready(function() {
           content2 = [];
           operate = "";
         }
-       }
       }
+    }
   });
 });
